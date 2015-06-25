@@ -81,9 +81,8 @@ function decode (body) {
 }
 
 function save (data) {
-  console.log(data)
-  // for (var i = 0; i < data.length; i++) {
-  //   var brief = new Brief(data[i])
-  //   brief.save()
-  // }
+  for (var i = 0; i < data.length; i++) {
+    var brief = new Brief(data[i])
+    brief.save()
+  }
 }
