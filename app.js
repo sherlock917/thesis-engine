@@ -5,8 +5,8 @@ var request = require('request')
 
 mongoose.connect('mongodb://localhost/ThesisEngine')
 
-var urlSession = 'http://epub.cnki.net/KNS/request/SearchHandler.ashx?action=&NaviCode=*&ua=1.21&PageName=ASP.brief_result_aspx&DbPrefix=CCJD&DbCatalog=%e4%b8%ad%e5%9b%bd%e5%ad%a6%e6%9c%af%e8%be%91%e5%88%8a%e5%85%a8%e6%96%87%e6%95%b0%e6%8d%ae%e5%ba%93&ConfigFile=CCJD.xml&db_opt=%E4%B8%AD%E5%9B%BD%E5%AD%A6%E6%9C%AF%E8%BE%91%E5%88%8A%E5%85%A8%E6%96%87%E6%95%B0%E6%8D%AE%E5%BA%93&db_value=%E4%B8%AD%E5%9B%BD%E5%AD%A6%E6%9C%AF%E8%BE%91%E5%88%8A%E5%85%A8%E6%96%87%E6%95%B0%E6%8D%AE%E5%BA%93&year_type=echar&his=0'
-  , urlMain = 'http://epub.cnki.net/KNS/brief/brief.aspx?RecordsPerPage=50&QueryID=2&ID=&turnpage=1&tpagemode=L&dbPrefix=CCJD&Fields=&DisplayMode=custommode&PageName=ASP.brief_result_aspx&curpage='
+var urlSession = 'http://epub.cnki.net/KNS/request/SearchHandler.ashx?action=&NaviCode=*&ua=1.21&PageName=ASP.brief_result_aspx&DbPrefix=CPFD&DbCatalog=%e4%b8%ad%e5%9b%bd%e9%87%8d%e8%a6%81%e4%bc%9a%e8%ae%ae%e8%ae%ba%e6%96%87%e5%85%a8%e6%96%87%e6%95%b0%e6%8d%ae%e5%ba%93&ConfigFile=CPFD.xml&db_opt=%E4%B8%AD%E5%9B%BD%E9%87%8D%E8%A6%81%E4%BC%9A%E8%AE%AE%E8%AE%BA%E6%96%87%E5%85%A8%E6%96%87%E6%95%B0%E6%8D%AE%E5%BA%93&db_value=%E4%B8%AD%E5%9B%BD%E9%87%8D%E8%A6%81%E4%BC%9A%E8%AE%AE%E8%AE%BA%E6%96%87%E5%85%A8%E6%96%87%E6%95%B0%E6%8D%AE%E5%BA%93&his=0'
+  , urlMain = 'http://epub.cnki.net/KNS/brief/brief.aspx?RecordsPerPage=50&QueryID=40&ID=&turnpage=1&tpagemode=L&dbPrefix=CPFD&Fields=&DisplayMode=custommode&PageName=ASP.brief_result_aspx&curpage='
 
 var session
 var page = 1, count = 0
@@ -63,8 +63,8 @@ function decode (body) {
     var green = $(contents[i]).find('.fontgreen').text().replace(/\s/g, '').split('，')
     data.author = green[0]
     data.institute = green[1]
-    // data.journal = green[2]
-    data.issue = green[2]
+    data.journal = green[2]
+    data.issue = green[3]
 
     // get abstract
     var script = $($(contents[i]).find('script')[0]).text()
