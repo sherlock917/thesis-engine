@@ -39,5 +39,14 @@
         <jarDirectory url="file://$USER_HOME$/hadoop-2.7.0/share/hadoop/common/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
